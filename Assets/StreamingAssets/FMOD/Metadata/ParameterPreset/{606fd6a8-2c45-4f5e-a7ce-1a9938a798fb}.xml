@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{606fd6a8-2c45-4f5e-a7ce-1a9938a798fb}">
 		<property name="name">
-			<value>Tremolo</value>
+			<value>Distortion</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1044df80-e966-4e07-88d8-8b460949aebe}</destination>

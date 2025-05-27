@@ -1,0 +1,23 @@
+header: EntityAPI
+entityType: IEntity
+aggressiveInlining: true
+unsafeAccess: true
+
+namespace: Prototype
+className: EntityAPI
+directory: Assets/Game/Scripts/API
+ 
+imports:
+- UnityEngine
+- Atomic.Entities
+- Atomic.Elements
+- FMOD.Studio
+- FMODUnity
+
+tags:
+- Player
+
+values:
+- Transform: Transform
+- Sound: EventReference 
+- TriggerReceiver: TriggerEventReceiver
