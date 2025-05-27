@@ -1,4 +1,5 @@
-﻿using FMOD;
+﻿using System.Collections.Generic;
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class Ring : ImmediateModeShapeDrawer
     private Tween tween;
     private EventInstance instance;
     private bool isTriggered;
+    
+    private HashSet<Collider> activeColliders = new();
 
     private void Awake()
     {
@@ -31,15 +34,25 @@ public class Ring : ImmediateModeShapeDrawer
 
     private void OnTriggerEnter(Collider other)
     {
-        isTriggered = true;
-        StopSound();
+        if (other.GetComponent<Sound>() || other.GetComponent<SoundFX>())
+        {
+            if (activeColliders.Add(other) && activeColliders.Count == 1)
+            {
+                isTriggered = true;
+                StopSound();
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isTriggered = false;
-        StartSound();
+        if (activeColliders.Remove(other) && activeColliders.Count == 0)
+        {
+            isTriggered = false;
+            StartSound();
+        }
     }
+
 
     private void StartSound()
     {
