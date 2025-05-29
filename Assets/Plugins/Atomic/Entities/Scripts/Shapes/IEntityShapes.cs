@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if ATOMIC && SHAPES_URP
+using UnityEngine;
 
 namespace Atomic.Entities
 {
@@ -9,7 +10,10 @@ namespace Atomic.Entities
 
     public interface IEntityShapes<in T> : IEntityShapes where T : IEntity
     {
-        void IEntityShapes.OnShapesDraw(Camera cam, in IEntity entity) => this.OnShapesDraw(cam, (T)entity);
+        void IEntityShapes.OnShapesDraw(Camera cam, in IEntity entity)
+            => this.OnShapesDraw(cam, (T)entity);
+
         void OnShapesDraw(Camera cam, T entity);
     }
 }
+#endif

@@ -148,15 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b79da6efc904be0afbd621fe755d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lastUsedContexts:
-  - {fileID: 0}
-  _paths:
-  - context: {fileID: 0}
-    path: testValue
-    rawPath: testValue
-    type:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    flags: 0
 --- !u!4 &174864930
 Transform:
   m_ObjectHideFlags: 17
@@ -417,202 +408,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 521410151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &680639487
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680639492}
-  - component: {fileID: 680639491}
-  - component: {fileID: 680639490}
-  - component: {fileID: 680639489}
-  - component: {fileID: 680639488}
-  m_Layer: 0
-  m_Name: BindingSystem (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &680639488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680639487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311ba8b61b0d13a42af71825723a860f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testValue: 1
---- !u!23 &680639489
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680639487}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: -7805965318761107941, guid: 735b0a31e33111f44bb64823e0da95c7, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &680639490
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680639487}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &680639491
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680639487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d63f5d344209824e89fc78ed9155431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bindings:
-  - _proxySource: {fileID: 0}
-    _proxySourceType:
-      _type: MyTools.Runtime.AnimateTransforms, MyTools.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    _proxyPath: speed
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    _isBound: 0
-    _options: 0
-    _bindData:
-      Source: {fileID: 680639492}
-      Path: position/y
-      _mode: 2
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      _ppath: bindings.Array.data[0]._bindData
-      _context: {fileID: 680639491}
-      _flags: 10485892
-  - _proxySource: {fileID: 0}
-    _proxySourceType:
-      _type: MyTools.Runtime.AnimateTransforms, MyTools.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    _proxyPath: speed
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    _isBound: 1
-    _options: 0
-    _bindData:
-      Source: {fileID: 0}
-      Path: 
-      _mode: 0
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: 
-      _ppath: bindings.Array.data[1]._bindData
-      _context: {fileID: 680639491}
-      _flags: 2097280
-  - _proxySource: {fileID: 680639492}
-    _proxySourceType:
-      _type: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    _proxyPath: m_LocalPosition
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    _isBound: 1
-    _options: 0
-    _bindData:
-      Source: {fileID: 680639487}
-      Path: 
-      _mode: 0
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: 
-      _ppath: bindings.Array.data[2]._bindData
-      _context: {fileID: 680639491}
-      _flags: 2097280
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
---- !u!4 &680639492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680639487}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857486536
 GameObject:
@@ -877,7 +672,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958617575}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1032841738
+--- !u!1 &1028387889
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -885,173 +680,64 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1032841742}
-  - component: {fileID: 1032841741}
-  - component: {fileID: 1032841740}
-  - component: {fileID: 1032841739}
-  - component: {fileID: 1032841743}
-  - component: {fileID: 1032841744}
+  - component: {fileID: 1028387893}
+  - component: {fileID: 1028387892}
+  - component: {fileID: 1028387891}
+  - component: {fileID: 1028387894}
   m_Layer: 0
-  m_Name: BindingSystem (2)
+  m_Name: Atomic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &1032841739
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: -7805965318761107941, guid: 735b0a31e33111f44bb64823e0da95c7, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1032841740
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1032841741
+--- !u!114 &1028387891
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
+  m_GameObject: {fileID: 1028387889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d63f5d344209824e89fc78ed9155431, type: 3}
+  m_Script: {fileID: 11500000, guid: 3142498ee69840069f3a93c11b1e1f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bindings:
-  - _proxySource: {fileID: 0}
-    _proxySourceType:
-      _type: MyTools.Runtime.AnimateTransforms, MyTools.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    _proxyPath: speed
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    _isBound: 0
-    _options: 0
-    _bindData:
-      Source: {fileID: 1032841742}
-      Path: position/y
-      _mode: 2
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      _ppath: bindings.Array.data[0]._bindData
-      _context: {fileID: 1032841741}
-      _flags: 10485892
-  - _proxySource: {fileID: 0}
-    _proxySourceType:
-      _type: MyTools.Runtime.AnimateTransforms, MyTools.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    _proxyPath: speed
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    _isBound: 1
-    _options: 0
-    _bindData:
-      Source: {fileID: 0}
-      Path: 
-      _mode: 0
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: 
-      _ppath: bindings.Array.data[1]._bindData
-      _context: {fileID: 1032841741}
-      _flags: 2097280
-  - _proxySource: {fileID: 1032841744}
-    _proxySourceType:
-      _type: BindTest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    _proxyPath: testValue
-    _runtimeProxyPath: 
-    _proxyType:
-      _type: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    _isBound: 1
-    _options: 0
-    _bindData:
-      Source: {fileID: 1032841742}
-      Path: position/x
-      _mode: 0
-      _parameters: []
-      _mainParamIndex: -1
-      _readConverter:
-        rid: -2
-      _writeConverter:
-        rid: -2
-      _modifiers: []
-      _sourceType: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      _ppath: bindings.Array.data[2]._bindData
-      _context: {fileID: 1032841741}
-      _flags: 2097284
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
---- !u!4 &1032841742
+  installOnAwake: 1
+  installInEditMode: 0
+  disposeValues: 1
+  overrideName: 0
+  entityName: 
+  installers:
+  - {fileID: 1028387894}
+  children: []
+  _onlySelectedGizmos: 0
+  _onlyEditModeGizmos: 0
+  _tagCapacity: 0
+  _valueCapacity: 1
+  _behaviourCapacity: 1
+  _executeAlways: 0
+--- !u!114 &1028387892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028387889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603a745f80e14d1d8cd57cf70a50187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entities:
+  - {fileID: 1028387891}
+--- !u!4 &1028387893
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
+  m_GameObject: {fileID: 1028387889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1060,40 +746,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1032841743
+--- !u!114 &1028387894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
+  m_GameObject: {fileID: 1028387889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfeb59982ef279344a35b23acda56602, type: 3}
+  m_Script: {fileID: 11500000, guid: b85c44089b78483391d8749aad7003b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 1
-  y: 0
-  z: 0
-  space: 0
-  speed: 1
-  amplitude: 5
-  frequency: 1
-  easings: 0
-  selectedEasing: EaseInSine
---- !u!114 &1032841744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032841738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311ba8b61b0d13a42af71825723a860f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testValue: 0
 --- !u!1 &1454471727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1165,5 @@ SceneRoots:
   - {fileID: 857486539}
   - {fileID: 930336571}
   - {fileID: 521410151}
-  - {fileID: 680639492}
-  - {fileID: 1032841742}
   - {fileID: 174864930}
+  - {fileID: 1028387893}

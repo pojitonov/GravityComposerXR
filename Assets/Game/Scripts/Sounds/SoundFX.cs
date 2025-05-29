@@ -73,7 +73,9 @@ public class SoundFX : ImmediateModeShapeDrawer
                 color: color2);
 
             if (!isTriggered) return;
-            if (Physics.Raycast(origin, direction, out RaycastHit hit))
+            LayerMask deskMask = LayerMask.GetMask("TransparentFX");
+
+            if (Physics.Raycast(origin, direction, out RaycastHit hit, Mathf.Infinity, deskMask))
             {
                 if (hit.collider.CompareTag("Desk"))
                 {

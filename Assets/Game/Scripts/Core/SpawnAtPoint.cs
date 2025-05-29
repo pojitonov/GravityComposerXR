@@ -5,7 +5,7 @@ using System;
 public class SpawnAtPoint : MonoBehaviour
 {
     public event Action OnSpawned;
-    
+
     [SerializeField] GameObject objectToSpawn;
     [SerializeField] bool isScenePrefab;
     [SerializeField] MRUKAnchor.SceneLabels label;

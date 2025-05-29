@@ -10,11 +10,14 @@ public class Sound : ImmediateModeShapeDrawer
     public EventInstance EventInstance => instance;
     public bool IsPlaying => isPlaying;
     
+    const string sineWaveHz = "Sine 100Hz";
+
     [SerializeField] private EventReference sound;
     
-    private float radius = 0.02f;
+    private float radius = 0.03f;
     private float thickness = 0.001f;
-    private Color color = Color.black;
+    private Color color = Color.white;
+    private Color color2 = new Color(0f, 0f, 0f, 0.5f);
 
     private TextElement text;
     private Tween tween;
@@ -25,6 +28,8 @@ public class Sound : ImmediateModeShapeDrawer
     private float fadeDuration = 5f;
     private float animatedVal;
 
+    private Tween wobbleTween;
+    private bool isWobbling;
     
     private void Awake()
     {
@@ -72,12 +77,15 @@ public class Sound : ImmediateModeShapeDrawer
             .OnComplete(() =>
         {
             isPlaying = true;
+            StartWobble();
         });
     }
 
 
     private void FadeOut()
     {
+        StopWobble();
+
         tween.Stop();
         instance.getParameterByName("Master", out var current);
         tween = Tween.Custom(current, 0f, fadeDuration,
@@ -92,6 +100,30 @@ public class Sound : ImmediateModeShapeDrawer
                 isPlaying = false;
             });
     }
+    
+    private void StartWobble()
+    {
+        isWobbling = true;
+
+        wobbleTween = Tween.Custom(
+            0f, Mathf.PI * 2f, 1f,
+            onValueChange: phase =>
+            {
+                animatedVal = Mathf.Lerp(radius, 0.025f, (Mathf.Sin(phase) + 1f) * 0.5f);
+            },
+            cycles: -1,
+            cycleMode: CycleMode.Restart
+        );
+    }
+
+    private void StopWobble()
+    {
+        if (!isWobbling) return;
+
+        isWobbling = false;
+        wobbleTween.Stop();
+    }
+
 
     public override void DrawShapes(Camera cam)
     {
@@ -99,9 +131,9 @@ public class Sound : ImmediateModeShapeDrawer
         using (Draw.Command(cam))
         {
             Draw.ZTest = CompareFunction.Always;
-            Draw.Sphere(transform.position, animatedVal, color);
-            var content = "Sine Wave 100Hz";
-            Draw.Text(text, transform.position + new Vector3(0, 0.035f, 0), fontSize: 0.1f, content: content,
+            Draw.Sphere(transform.position, animatedVal, color2);
+            var content = sineWaveHz;
+            Draw.Text(text, transform.position + new Vector3(0, 0.0286f, 0), fontSize: 0.1f, content: content,
                 color: color);
         }
     }

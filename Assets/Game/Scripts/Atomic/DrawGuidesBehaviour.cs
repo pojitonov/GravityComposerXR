@@ -1,45 +1,47 @@
-﻿using Atomic.Elements;
-using Atomic.Entities;
+﻿using Atomic.Entities;
 using Prototype;
 using Shapes;
 using UnityEngine;
 
-public class DrawGuidesBehaviour : IEntityInit
+public class DrawGuidesBehaviour : IEntityInit, IEntityShapes
 {
-    private TriggerEventReceiver triggerReceiver;
-    TextElement text;
-    Color color1 = Color.black;
-    Color color2 = Color.yellow;
-    float thickness = 0.001f;
-    private bool trigger;
-
-    public DrawGuidesBehaviour(TriggerEventReceiver triggerReceiver)
-    {
-        this.triggerReceiver = triggerReceiver;
-    }
+    private IEntity entity;
+    private Color color = Color.yellow;
 
     public void Init(in IEntity entity)
     {
-        text = new TextElement();
-        triggerReceiver.OnEntered += OnTriggerEnter;
-        triggerReceiver.OnExited += OnTriggerExit;
+        this.entity = entity;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnShapesDraw(Camera cam, in IEntity entity)
     {
-        if (!other.CompareTag("Ring"))
-            return;
-
-        Debug.Log("OnTriggerEnter");
-        trigger = true;
+        cam.Draw(DrawSineWave);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void DrawSineWave()
     {
-        if (!other.CompareTag("Ring"))
-            return;
+        var center = entity.GetTransform().position;
+        float waveLength = 0.25f;
+        float amplitude = 0.025f;
+        float speed = 1f;
+        int segments = 50;
 
-        Debug.Log("OnTriggerExit");
-        trigger = false;
+        Vector3 start = center - new Vector3(waveLength / 2f, 0, 0);
+        Vector3 prev = start;
+
+        float time = Time.time * speed;
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = (float)i / segments;
+            float x = t * waveLength;
+
+            float noiseInputX = t * 20f + time;
+            float y = (Mathf.PerlinNoise(noiseInputX, 0f) - 0.0f) * 2f * amplitude;
+
+            Vector3 current = start + new Vector3(x, y, 0);
+            Draw.Line(prev, current, 0.002f, color);
+            prev = current;
+        }
     }
 }
